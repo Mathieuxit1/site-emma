@@ -8,6 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: #4a2e0c;
 }
 .parchment {
   background: url('images/parchment.png') no-repeat center/cover;
