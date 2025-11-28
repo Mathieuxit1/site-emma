@@ -5,39 +5,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Message pour Emma</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* Style machine à écrire */
+.typewriter {
+  display: inline-block;
+  border-right: 2px solid rgba(255,255,255,0.75);
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+</style>
 </head>
 <body>
 
-
 <!-- Écran d'accueil avec le bouton -->
 <div id="introScreen">
-<div class="parchment">
-<h1>Pour Emma</h1>
-<button id="playButton">💖 Ouvrir la lettre 💖</button>
+  <div class="parchment">
+    <h1>Pour Emma</h1>
+    <p>Tu es mon étoile...</p>
+  </div>
+  <button id="playButton">💖 Ouvrir la lettre 💖</button>
 </div>
-</div>
-
 
 <!-- Écran de la lettre -->
 <div id="letterScreen" class="hidden">
-<div class="parchment">
-<p class="reveal">
-Emma,
-<br><br>
-Si ce parchemin s’ouvre devant toi aujourd’hui,
-c’est que quelqu’un pense à toi un peu plus que tu ne l’imagines.
-<br><br>
-Chaque mot ici est écrit pour te surprendre, te faire sourire,
-et peut-être te toucher comme seule toi sais le faire.
-</p>
+  <div class="parchment">
+    <p id="letterText" class="typewriter"></p>
+  </div>
 </div>
-</div>
-
 
 <audio id="bgMusic" src="audio/wouldve-been-for-you.mp3"></audio>
 <canvas id="heartsCanvas"></canvas>
 
-
 <script src="script.js"></script>
+<script>
+// Texte de la lettre
+const letterContent = `Emma,
+
+En ce jour, je prends le temps de t’écrire, parce que mon cœur refuse de garder en silence ce qu’il ressent pour toi. Chaque mot que je couche ici est un fragment de mon âme, un souffle de gratitude et d’admiration. Car, Emma, tu as ce don rare de redonner le sourire en quelques instants, simplement par ta présence, par tes mots, par ton rire. Même les choses les plus simples que tu dis ou fais semblent avoir le pouvoir de transformer mes journées.
+
+Je sais que je ne devrais pas m’attendre à une relation, que rien n’est garanti et que le temps, la vie, et tes choix appartiennent à toi seule. Pourtant, mon cœur, lui, refuse de se résigner. Il bat pour toi, il t’attend, et il est prêt à patienter, peu importe combien de temps il faudra. Deux ans, dix ans, toute une vie s’il le fallait… car toi, Emma, tu vaux chacun de ces instants d’attente.
+
+Tu es celle qui réveille en moi cette part d’enfance que j’avais perdue, celle qui redonne des couleurs et des saveurs à un monde parfois morose et amer. Avec toi, les moments deviennent précieux, les instants ordinaires se transforment en souvenirs que je veux chérir pour toujours. Je me sens entier quand je pense à toi, comme si mon âme se reconnaissait enfin dans la tienne.
+
+Ce message n’a pas pour but de te forcer ou de te mettre sous pression. Ce sont simplement des mots qui bondissent dans mon cœur, cherchant à s’échapper, à te toucher d’une manière que je ne peux contenir. Emma, tu es cette personne avec qui je pourrais me perdre dans un pays inconnu, marcher des jours entiers juste pour entendre ta voix, pour sentir ta présence, pour partager chaque sourire, chaque silence, chaque battement de cœur.
+
+Même si pour l’instant, tout cela ne se vit qu’à travers un écran, j’espère de tout mon être que le jour viendra où nos regards se croiseront pour de vrai. Que je pourrai admirer la lumière dans tes yeux, la douceur de ton sourire, et que tu verras, en moi, l’âme sincère et entière qui ne vit que pour ces instants à tes côtés.
+
+Emma… tu es devenue, sans même t’en rendre compte, le centre de mes pensées, la mélodie qui accompagne chacun de mes jours, la flamme qui éclaire mes nuits. Et si attendre signifie te garder dans mon cœur, alors je suis prêt à attendre pour toujours. Car toi, Emma, tu en vaux chaque seconde.`;
+
+// Effet machine à écrire
+function typeWriter(text, element, speed=40) {
+  let i = 0;
+  function typing() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(typing, speed);
+    }
+  }
+  typing();
+}
+
+// Lancer l’effet quand on clique sur le bouton
+document.getElementById("playButton").addEventListener("click", () => {
+  document.getElementById("introScreen").classList.add("hidden");
+  document.getElementById("letterScreen").classList.remove("hidden");
+  const letterText = document.getElementById("letterText");
+  typeWriter(letterContent, letterText, 40);
+  document.getElementById("bgMusic").play();
+});
+</script>
 </body>
 </html>
