@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message pour Emma</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      /* Image de parchemin stable en arrière-plan */
+      background: url('https://i.imgur.com/q8Z1gW5.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Times New Roman', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .parchment {
+      background: url('https://i.imgur.com/7yvYyQw.png') no-repeat center/cover;
+      width: 90%;
+      max-width: 700px;
+      padding: 40px;
+      border-radius: 10px;
+      transform-origin: top;
+      animation: scrollOpen 2.2s ease forwards;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.3);
+    }
+    @keyframes scrollOpen {
+      0% { transform: scaleY(0); }
+      60% { transform: scaleY(1.05); }
+      100% { transform: scaleY(1); }
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+    .reveal {
+      opacity: 0;
+      animation: revealText 4s steps(40) forwards;
+    }
+    @keyframes revealText {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="parchment">
+    <h1>Pour Emma</h1>
+    <p>
+      Emma,
+      
+      Si ce parchemin s’ouvre devant toi aujourd’hui,
+      c’est que quelqu’un pense à toi un peu plus que tu ne l’imagines.
+      
+      Chaque mot ici est écrit pour te surprendre, te faire sourire,
+      et peut-être te toucher comme seule toi sais le faire.
+    </p>
+  </div>
+</body>
+</html>
