@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Message pour Emma</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message pour Emma</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="parchment">
-    <h1>Pour Emma</h1>
-    <p class="reveal">
-      Emma,
-      <br><br>
-      Si ce parchemin s’ouvre devant toi aujourd’hui,
-      c’est que quelqu’un pense à toi un peu plus que tu ne l’imagines.
-      <br><br>
-      Chaque mot ici est écrit pour te surprendre, te faire sourire,
-      et peut-être te toucher comme seule toi sais le faire.
-    </p>
-    <button id="playButton">💖 Ouvrir la lettre 💖</button>
-  </div>
-  <audio id="bgMusic" src="https://drive.google.com/uc?export=download&id=1dN_qRdpSjoOCJF5XpMsqed9UpLVn1dCe"></audio>
-  <canvas id="heartsCanvas"></canvas>
-=======
-    <button id="playButton">Ouvrir la lettre</button>
-  </div>
-  <audio id="bgMusic" src="https://drive.google.com/uc?export=download&id=1dN_qRdpSjoOCJF5XpMsqed9UpLVn1dCe"></audio>
-  <script src="script.js"></script>
+<div id="introScreen">
+<div class="parchment">
+<h1>Pour Emma</h1>
+<button id="playButton">💖 Ouvrir la lettre 💖</button>
+</div>
+</div>
+
+
+<div id="letterScreen" class="hidden">
+<div class="parchment">
+<p class="reveal">
+Emma,
+<br><br>
+Si ce parchemin s’ouvre devant toi aujourd’hui,
+c’est que quelqu’un pense à toi un peu plus que tu ne l’imagines.
+<br><br>
+Chaque mot ici est écrit pour te surprendre, te faire sourire,
+et peut-être te toucher comme seule toi sais le faire.
+</p>
+</div>
+</div>
+
+
+<audio id="bgMusic" src="https://drive.google.com/uc?export=download&id=1dN_qRdpSjoOCJF5XpMsqed9UpLVn1dCe"></audio>
+<canvas id="heartsCanvas"></canvas>
+<script src="script.js"></script>
 </body>
 </html>
