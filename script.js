@@ -13,7 +13,13 @@ canvas.height = window.innerHeight;
 
 let hearts = [];
 function createHeart() {
-hearts.push({ x: Math.random() * canvas.width, y: canvas.height + 10, size: 10 + Math.random() * 10, speed: 1 + Math.random() * 2, opacity: 0.7 + Math.random() * 0.3 });
+hearts.push({
+x: Math.random() * canvas.width,
+y: canvas.height + 10,
+size: 10 + Math.random() * 10,
+speed: 1 + Math.random() * 2,
+opacity: 0.7 + Math.random() * 0.3
+});
 }
 function drawHearts() {
 ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -45,9 +51,8 @@ next();
 
 
 btn.addEventListener('click', () => {
-intro.style.display = 'none'; // cache l'écran d'intro et le carré
-canvas.style.display = 'none'; // cache le canvas si nécessaire
-letter.classList.remove('hidden'); // montre la lettre
+intro.style.display = 'none'; // cache tout l'écran d'accueil
+letter.classList.remove('hidden'); // affiche la lettre
 music.play().catch(()=>alert('Veuillez interagir avec la page pour activer le son.'));
 typeWriter();
 });
