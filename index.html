@@ -3,77 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Message pour Emma</title>
-<link rel="stylesheet" href="style.css">
+<title>Emma</title>
+
 <style>
-/* Style machine à écrire */
-.typewriter {
-  display: inline-block;
-  border-right: 2px solid rgba(255,255,255,0.75);
-  white-space: pre-wrap;
-  overflow: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4ede4;
+    font-family: 'Montserrat', sans-serif;
+    color: #4a4238;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    animation: fadeScreen 2.8s ease forwards;
+}
+
+@keyframes fadeScreen {
+    from { opacity: 0; filter: blur(10px); }
+    to { opacity: 1; filter: blur(0); }
+}
+
+/* LOGO */
+.logo {
+    font-family: 'Great Vibes', cursive; 
+    font-size: 36px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #d4a76a; 
+    position: relative;
+    opacity: 0;
+    animation: logoFade 2s ease forwards 0.3s;
+}
+
+.logo::before {
+    content: "✴";
+    display: block;
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #d4a76a;
+}
+
+@keyframes logoFade { to { opacity: 1; } }
+
+.container {
+    width: 80%;
+    max-width: 850px;
+    padding: 25px 25px 40px;
+    background: #fbf7f2;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    animation: slideUp 2.2s ease forwards;
+    opacity: 0;
+    transform: translateY(40px);
+    margin-bottom: 40px;
+}
+
+@keyframes slideUp { to { opacity:1; transform: translateY(0); } }
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin: 0 0 10px;
+    text-align: center;
+    color: #3e362e;
+    opacity: 0;
+    animation: titleFade 2.5s ease forwards 0.8s;
+    transform: scale(0.96);
+}
+
+@keyframes titleFade { to { opacity:1; transform: scale(1); } }
+
+.subtitle {
+    text-align: center;
+    font-size: 13px;
+    opacity: 0;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    animation: subtitleFade 2s ease forwards 1.6s;
+}
+
+@keyframes subtitleFade { to { opacity:0.7; } }
+
+p {
+    line-height: 1.7;
+    font-size: 15px;
+    text-align: justify;
+    opacity: 0;
+    animation: textFade 2.2s ease forwards;
+    animation-delay: 2.3s;
+}
+
+@keyframes textFade { to { opacity:1; } }
+
+.quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    text-align: center;
+    margin: 25px 0;
+    opacity: 0;
+    animation: textFade 2.4s ease forwards;
+    animation-delay: 2.7s;
+}
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0;
+    animation: textFade 2.2s ease forwards;
+    animation-delay: 3.3s;
+}
+
+/* SIGNATURE */
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    color: #d4a76a;
+    text-align: right;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateX(30px);
+    animation: signFade 3s ease forwards;
+    animation-delay: 5.5s;
+}
+
+@keyframes signFade {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 550px) {
+    .logo { font-size: 28px; }
+    .logo::before { font-size: 16px; margin-bottom: 4px; }
+    h1 { font-size: 32px; }
+    p { font-size: 14px; }
+    .quote { font-size: 16px; }
+    .container { width: 90%; padding: 22px; }
+    .signature { font-size: 22px; }
 }
 </style>
 </head>
+
 <body>
 
-<!-- Écran d'accueil avec le bouton -->
-<div id="introScreen">
-  <div class="parchment">
-    <h1>Pour Emma</h1>
-    <p>Tu es mon étoile...</p>
-  </div>
-  <button id="playButton">💖 Ouvrir la lettre 💖</button>
+<div class="logo">Emma</div>
+
+<div class="container">
+    <h1>Emma</h1>
+    <div class="subtitle">Une présence douce, sans promesse mais sincère</div>
+
+    <p>
+        Il existe des personnes qui ne passent pas par nos vies par hasard.
+        Elles arrivent comme une pause dans le bruit, comme un silence qui fait du bien,
+        comme un regard qui ne juge pas.
+    </p>
+
+    <p>
+        Emma… c’est ce genre de personne. Elle n’a pas besoin de parler pour apaiser,
+        ni de promettre pour être sincère, elle est juste là, simplement,
+        avec cette manière douce d’exister, qui ne demande rien, mais qui donne beaucoup.
+    </p>
+
+    <p>
+        Dans ses gestes attentionnés, on retrouve la chaleur d’une maison.
+        Dans sa gentillesse, un refuge. Dans son honnêteté, une vérité précieuse :
+        il y a des choses qui ne se forcent pas, et des sentiments qu’on protège,
+        même en restant amis.
+    </p>
+
+    <p>
+        Je te remercie, Emma, pour la confiance, la sincérité,
+        et pour tout ce que tu offres sans le voir. Merci de ne pas avoir menti pour me garder.
+        Merci d’être restée, autrement, mais réellement.
+    </p>
+
+    <p>
+        Certaines histoires ne sont pas faites pour brûler, mais pour éclairer.
+        Tu fais partie de celles qui illuminent sans consumer.
+    </p>
+
+    <div class="quote">« La sincérité est parfois un acte d’amour silencieux. »</div>
+    <div class="quote">« Les plus belles personnes ne se possèdent pas, elles se respectent. »</div>
+    <div class="quote">« Être présent, parfois, suffit à prouver qu’on tient. »</div>
+
+    <div class="footer">Fin de chapitre, mais jamais fin d’histoire.</div>
+
+    <div class="signature">Tom</div>
 </div>
 
-<!-- Écran de la lettre -->
-<div id="letterScreen" class="hidden">
-  <div class="parchment">
-    <p id="letterText" class="typewriter"></p>
-  </div>
-</div>
-
-<audio id="bgMusic" src="audio/wouldve-been-for-you.mp3"></audio>
-<canvas id="heartsCanvas"></canvas>
-
-<script src="script.js"></script>
-<script>
-// Texte de la lettre
-const letterContent = `Emma,
-
-En ce jour, je prends le temps de t’écrire, parce que mon cœur refuse de garder en silence ce qu’il ressent pour toi. Chaque mot que je couche ici est un fragment de mon âme, un souffle de gratitude et d’admiration. Car, Emma, tu as ce don rare de redonner le sourire en quelques instants, simplement par ta présence, par tes mots, par ton rire. Même les choses les plus simples que tu dis ou fais semblent avoir le pouvoir de transformer mes journées.
-
-Je sais que je ne devrais pas m’attendre à une relation, que rien n’est garanti et que le temps, la vie, et tes choix appartiennent à toi seule. Pourtant, mon cœur, lui, refuse de se résigner. Il bat pour toi, il t’attend, et il est prêt à patienter, peu importe combien de temps il faudra. Deux ans, dix ans, toute une vie s’il le fallait… car toi, Emma, tu vaux chacun de ces instants d’attente.
-
-Tu es celle qui réveille en moi cette part d’enfance que j’avais perdue, celle qui redonne des couleurs et des saveurs à un monde parfois morose et amer. Avec toi, les moments deviennent précieux, les instants ordinaires se transforment en souvenirs que je veux chérir pour toujours. Je me sens entier quand je pense à toi, comme si mon âme se reconnaissait enfin dans la tienne.
-
-Ce message n’a pas pour but de te forcer ou de te mettre sous pression. Ce sont simplement des mots qui bondissent dans mon cœur, cherchant à s’échapper, à te toucher d’une manière que je ne peux contenir. Emma, tu es cette personne avec qui je pourrais me perdre dans un pays inconnu, marcher des jours entiers juste pour entendre ta voix, pour sentir ta présence, pour partager chaque sourire, chaque silence, chaque battement de cœur.
-
-Même si pour l’instant, tout cela ne se vit qu’à travers un écran, j’espère de tout mon être que le jour viendra où nos regards se croiseront pour de vrai. Que je pourrai admirer la lumière dans tes yeux, la douceur de ton sourire, et que tu verras, en moi, l’âme sincère et entière qui ne vit que pour ces instants à tes côtés.
-
-Emma… tu es devenue, sans même t’en rendre compte, le centre de mes pensées, la mélodie qui accompagne chacun de mes jours, la flamme qui éclaire mes nuits. Et si attendre signifie te garder dans mon cœur, alors je suis prêt à attendre pour toujours. Car toi, Emma, tu en vaux chaque seconde.`;
-
-// Effet machine à écrire
-function typeWriter(text, element, speed=40) {
-  let i = 0;
-  function typing() {
-    if (i < text.length) {
-      element.textContent += text.charAt(i);
-      i++;
-      setTimeout(typing, speed);
-    }
-  }
-  typing();
-}
-
-// Lancer l’effet quand on clique sur le bouton
-document.getElementById("playButton").addEventListener("click", () => {
-  document.getElementById("introScreen").classList.add("hidden");
-  document.getElementById("letterScreen").classList.remove("hidden");
-  const letterText = document.getElementById("letterText");
-  typeWriter(letterContent, letterText, 40);
-  document.getElementById("bgMusic").play();
-});
-</script>
 </body>
 </html>
