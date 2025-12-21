@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pour Lénaïs 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.18);
+            padding: 25px;
+            border-radius: 22px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 30px rgba(0,0,0,0.25);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 2.6rem);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: clamp(1rem, 4vw, 1.15rem);
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .time-box {
+            background: rgba(255,255,255,0.28);
+            padding: 18px 10px;
+            border-radius: 18px;
+        }
+
+        .time-box span {
+            font-size: clamp(1.6rem, 6vw, 2rem);
+            font-weight: bold;
+            display: block;
+        }
+
+        .label {
+            font-size: 0.75rem;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        /* Desktop amélioration */
+        @media (min-width: 600px) {
+            .countdown {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Cœurs */
+        .heart {
+            position: absolute;
+            bottom: -30px;
+            color: rgba(255,255,255,0.7);
+            animation: floatUp linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-120vh) scale(1.6);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>💖 Lénaïs 💖</h1>
+    <p>
+        Chaque seconde qui passe est un battement de plus pour cette année…
+        et pour tout ce que l’amour nous réserve.
+    </p>
+
+    <div class="countdown">
+        <div class="time-box">
+            <span id="days">0</span>
+            <div class="label">Jours</div>
+        </div>
+        <div class="time-box">
+            <span id="hours">0</span>
+            <div class="label">Heures</div>
+        </div>
+        <div class="time-box">
+            <span id="minutes">0</span>
+            <div class="label">Minutes</div>
+        </div>
+        <div class="time-box">
+            <span id="seconds">0</span>
+            <div class="label">Secondes</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateCountdown() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const end = new Date(year, 11, 31, 23, 59, 59);
+        const diff = end - now;
+
+        document.getElementById("days").textContent =
+            Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").textContent =
+            Math.floor((diff / (1000 * 60 * 60)) % 24);
+        document.getElementById("minutes").textContent =
+            Math.floor((diff / (1000 * 60)) % 60);
+        document.getElementById("seconds").textContent =
+            Math.floor((diff / 1000) % 60);
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.textContent = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 18 + 14) + "px";
+        heart.style.animationDuration = (Math.random() * 4 + 6) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 9000);
+    }
+
+    setInterval(createHeart, 700);
+</script>
+
+</body>
+</html>
